@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  bash-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Check Bash syntax
+        run: |
+          bash -n check_api.sh
+          bash -n analyze_logs.sh
+
+      - name: Test API check
+        run: ./check_api.sh https://httpbin.org/status/200
