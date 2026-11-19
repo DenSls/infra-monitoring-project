@@ -221,3 +221,14 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Temporary files and deployment archives
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+/tmp/
+/temp/
+*.tar
+*.tar.gz
